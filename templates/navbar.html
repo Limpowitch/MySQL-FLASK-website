@@ -1,0 +1,85 @@
+<!-- Navbar with Tailwind CSS -->
+<nav class="bg-white border-gray-200 dark:bg-gray-900">
+    <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl p-4">
+        <!-- Logo or brand -->
+        <a href="https://flowbite.com" class="flex items-center">
+            <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Tim Rosendahl</span>
+        </a>
+        <!-- Navigation links -->
+        <ul class="flex flex-row font-medium mt-0 mr-6 space-x-8 text-sm">
+            <li>
+                <a href="/" class="text-gray-900 dark:text-white hover:underline" aria-current="page">Home</a>
+            </li>
+            <li>
+                <a href="/about" class="text-gray-900 dark:text-white hover:underline">About me</a>
+            </li>
+            <li>
+                <a href="/users" class="text-gray-900 dark:text-white hover:underline">Users</a>
+            </li>
+            <!-- Icon converted to a button -->
+            <button id="loginButton" class="focus:outline-none">
+                <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7.75 4H19M7.75 4a2.25 2.25 0 0 1-4.5 0m4.5 0a2.25 2.25 0 0 0-4.5 0M1 4h2.25m13.5 6H19m-2.25 0a2.25 2.25 0 0 1-4.5 0m4.5 0a2.25 2.25 0 0 0-4.5 0M1 10h11.25m-4.5 6H19M7.75 16a2.25 2.25 0 0 1-4.5 0m4.5 0a2.25 2.25 0 0 0-4.5 0M1 16h2.25"/>
+                </svg>
+            </button>
+        </ul>
+    </div>
+</nav>
+
+<!-- Login Popup (Hidden by default) -->
+<div id="loginPopup" class="fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center hidden">
+    <div class="bg-white p-6 rounded-lg shadow-xl">
+        <!-- Login Form Header -->
+        <h2 class="text-2xl mb-4">Login</h2>
+        <!-- Login Form -->
+        <form>
+            <div class="mb-4">
+                <label for="username" class="block text-sm font-medium text-gray-700">Username</label>
+                <input type="text" id="username" name="username" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
+            </div>
+            <div class="mb-4">
+                <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+                <input type="password" id="password" name="password" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
+            </div>
+            <div class="text-right">
+                <button type="submit" class="px-3 py-1 text-sm font-medium text-white bg-indigo-500 hover:bg-indigo-600 rounded-md">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- JavaScript code for interaction -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var loginButton = document.getElementById('loginButton');
+        var loginPopup = document.getElementById('loginPopup');
+        var usernameInput = document.getElementById('username');
+        var passwordInput = document.getElementById('password');
+    
+        loginButton.addEventListener('click', function() {
+            loginPopup.classList.toggle('hidden');
+        });
+    
+        // Close the login popup when clicking outside of it
+        document.addEventListener('mousedown', function(event) {
+            if (!loginPopup.contains(event.target) && !loginButton.contains(event.target)) {
+                loginPopup.classList.add('hidden');
+            }
+        });
+    
+        // Close the login popup when the "Escape" key is pressed
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                loginPopup.classList.add('hidden');
+            }
+        });
+    
+        // Clear input fields on page load
+        usernameInput.value = '';
+        passwordInput.value = '';
+    });
+    </script>
+    
+
+
+
