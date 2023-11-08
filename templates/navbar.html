@@ -1,12 +1,9 @@
 <!-- Navbar with Tailwind CSS -->
-<nav class=" border-gray-200 dark:bg-gray-900 bg-slate-900 text-white">
-    <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl p-4">
+<nav class="dark:bg-gray-900 text-slate-900 bg-white border-gray-300 border-b">
+    <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl p-0 h-12">
         <!-- Logo or brand -->
-        <a href="https://flowbite.com" class="flex items-center">
-            <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Tim Rosendahl</span>
-        </a>
-        <!-- Navigation links -->
-        <ul class="flex flex-row font-medium mt-0 mr-6 space-x-8 text-sm text-white">
+        <span class="self-center text-xl font-semibold font-sans whitespace-nowrap dark:text-white text-slate-900 h-full p-2 tracking-wide ">Tim Rosendahl</span>        <!-- Navigation links -->
+        <ul class="flex flex-row font-medium mt-0 mr-6 space-x-8 text-sm text-slate-900">
             <li>
                 <a href="/" class=" dark:text-white hover:underline" aria-current="page">Home</a>
             </li>
@@ -53,7 +50,7 @@
     document.addEventListener('DOMContentLoaded', function() {
         var loginButton = document.getElementById('loginButton');
         var loginPopup = document.getElementById('loginPopup');
-        var usernameInput = document.getElementById('username');
+        var usernameInput = document.getElementById('username');    
         var passwordInput = document.getElementById('password');
     
         loginButton.addEventListener('click', function() {
